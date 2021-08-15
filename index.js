@@ -23,21 +23,70 @@
 
 // now try the ES5 way (with some template literals)~~~
 
-function Ball(color = "regular") {
+//grab elements from the DOM
+const ball = document.querySelector(".ball");
+const buttonNeutral = document.querySelector(".container__btn--neutral");
+const buttonCool = document.querySelector(".container__btn--cool");
+const buttonBright = document.querySelector(".container__btn--bright");
+const buttonDark = document.querySelector(".container__btn--dark");
+const buttonWarm = document.querySelector(".container__btn--warm");
+//test area 
+
+console.log(ball);
+
+//make a way to create diff color ball themes
+function Ball(color = "regular", backgroundColor) {
     this.color = color;
+    this.backgroundColor = backgroundColor;
 }
 
-Ball.prototype.bounce = function() {
-    return `The ${this.color} ball bounces!`;
+// Ball.prototype.bounce = function() {
+//     return `The ${this.color} ball bounces!`;
+//}
+
+//make some ball themes of diff colors
+
+const neutralBall = new Ball();
+console.log(neutralBall.color);
+
+const coolBall = new Ball("aqua", "white");
+console.log(coolBall.color);
+
+const brightBall = new Ball("red", "yellow");
+console.log(brightBall.color);
+
+const darkBall = new Ball("grey", "black");
+console.log(darkBall.color);
+
+const warmBall = new Ball("peru", "peachpuff");
+console.log(warmBall.color);
+
+//console.log(yellowBall.bounce()); //the method that exists in relation to the function constructor
+
+function changeToCool() {
+    ball.style.backgroundColor = `${coolBall.color}`;
+    body.style.backgroundColor = `${coolBall.backgroundColor}`;
 }
 
-const yellowBall = new Ball("yellow");
-console.log(yellowBall.color);
+function changeToBright() {
+    ball.style.backgroundColor = `${brightBall.color}`;
+    body.style.backgroundColor = `${brightBall.backgroundColor}`;
+}
 
-const redBall = new Ball("red");
-console.log(redBall.color);
+function changeToDark() {
+    ball.style.backgroundColor = `${darkBall.color}`;
+    body.style.backgroundColor = `${darkBall.backgroundColor}`;
+}
 
-const regularBall = new Ball();
-console.log(regularBall.color);
+function changeToWarm() {
+    ball.style.backgroundColor = `${warmBall.color}`;
+    body.style.backgroundColor = `${warmBall.backgroundColor}`;
+}
 
-console.log(yellowBall.bounce()); //the method that exists in relation to the function constructor
+
+button.addEventListener("click", function(e) {
+    e.preventDefault();
+    console.log("e listener worked");
+    return changeColor();
+})
+
