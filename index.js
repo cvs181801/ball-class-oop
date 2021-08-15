@@ -54,7 +54,7 @@ console.log(neutralBall.color);
 const coolBall = new Ball("aquamarine", "ghostwhite", "lightsteelblue");
 console.log(coolBall.color);
 
-const brightBall = new Ball("red", "yellow", "blue");
+const brightBall = new Ball("red", "#ffff60", "blue");
 console.log(brightBall.color);
 
 const darkBall = new Ball("white", "black", "violet");
