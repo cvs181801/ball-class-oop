@@ -1,0 +1,32 @@
+:root {
+    font-family: sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.ball {
+    border: 1px solid grey;
+    background-color: bisque;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+button {
+    background-color: grey;
+    color: black;
+    border: 1px solid black;
+    justify-content: right;
+    padding: .2em;
+}

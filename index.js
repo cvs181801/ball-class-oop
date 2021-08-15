@@ -40,4 +40,4 @@ console.log(redBall.color);
 const regularBall = new Ball();
 console.log(regularBall.color);
 
-console.log(yellowBall.bounce()); //the method that exists in relation to the function contructor
+console.log(yellowBall.bounce()); //the method that exists in relation to the function constructor
