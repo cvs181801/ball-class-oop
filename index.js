@@ -21,10 +21,14 @@
 // const baseball = new Ball("white");
 // console.log(baseball.color);
 
-// now try the ES5 way ~~~
+// now try the ES5 way (with some template literals)~~~
 
-function Ball(color) {
+function Ball(color = "regular") {
     this.color = color;
+}
+
+Ball.prototype.bounce = function() {
+    return `The ${this.color} ball bounces!`;
 }
 
 const yellowBall = new Ball("yellow");
@@ -33,3 +37,7 @@ console.log(yellowBall.color);
 const redBall = new Ball("red");
 console.log(redBall.color);
 
+const regularBall = new Ball();
+console.log(regularBall.color);
+
+console.log(yellowBall.bounce()); //the method that exists in relation to the function contructor
