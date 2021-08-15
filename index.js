@@ -24,6 +24,7 @@
 // now try the ES5 way (with some template literals)~~~
 
 //grab elements from the DOM
+const body = document.querySelector("body");
 const ball = document.querySelector(".ball");
 const buttonNeutral = document.querySelector(".container__btn--neutral");
 const buttonCool = document.querySelector(".container__btn--cool");
@@ -35,7 +36,7 @@ const buttonWarm = document.querySelector(".container__btn--warm");
 console.log(ball);
 
 //make a way to create diff color ball themes
-function Ball(color = "regular", backgroundColor) {
+function Ball(color = "bisque", backgroundColor = "whitesmoke") {
     this.color = color;
     this.backgroundColor = backgroundColor;
 }
@@ -49,7 +50,7 @@ function Ball(color = "regular", backgroundColor) {
 const neutralBall = new Ball();
 console.log(neutralBall.color);
 
-const coolBall = new Ball("aqua", "white");
+const coolBall = new Ball("aquamarine", "white");
 console.log(coolBall.color);
 
 const brightBall = new Ball("red", "yellow");
@@ -62,6 +63,11 @@ const warmBall = new Ball("peru", "peachpuff");
 console.log(warmBall.color);
 
 //console.log(yellowBall.bounce()); //the method that exists in relation to the function constructor
+
+function changeToNeutral() {
+    ball.style.backgroundColor = `${neutralBall.color}`;
+    body.style.backgroundColor = `${neutralBall.backgroundColor}`;
+}
 
 function changeToCool() {
     ball.style.backgroundColor = `${coolBall.color}`;
@@ -83,10 +89,34 @@ function changeToWarm() {
     body.style.backgroundColor = `${warmBall.backgroundColor}`;
 }
 
-
-button.addEventListener("click", function(e) {
+//make the buttons work:
+//1: Neutral theme
+buttonNeutral.addEventListener("click", function(e) {
     e.preventDefault();
     console.log("e listener worked");
-    return changeColor();
+    return changeToNeutral();
 })
-
+//2. Cool Theme
+buttonCool.addEventListener("click", function(e) {
+    e.preventDefault();
+    console.log("e listener worked");
+    return changeToCool();
+})
+//3. Bright Theme
+buttonBright.addEventListener("click", function(e) {
+    e.preventDefault();
+    console.log("e listener worked");
+    return changeToBright();
+})
+//4. Dark Theme
+buttonDark.addEventListener("click", function(e) {
+    e.preventDefault();
+    console.log("e listener worked");
+    return changeToDark();
+})
+//5. Warm Theme
+buttonWarm.addEventListener("click", function(e) {
+    e.preventDefault();
+    console.log("e listener worked");
+    return changeToWarm();
+})
