@@ -36,9 +36,10 @@ const buttonWarm = document.querySelector(".container__btn--warm");
 console.log(ball);
 
 //make a way to create diff color ball themes
-function Ball(color = "bisque", backgroundColor = "whitesmoke") {
+function Ball(color = "grey", backgroundColor = "whitesmoke", borderColor = "darkslategrey") {
     this.color = color;
     this.backgroundColor = backgroundColor;
+    this.borderColor = borderColor;
 }
 
 // Ball.prototype.bounce = function() {
@@ -50,16 +51,16 @@ function Ball(color = "bisque", backgroundColor = "whitesmoke") {
 const neutralBall = new Ball();
 console.log(neutralBall.color);
 
-const coolBall = new Ball("aquamarine", "white");
+const coolBall = new Ball("aquamarine", "ghostwhite", "lightsteelblue");
 console.log(coolBall.color);
 
-const brightBall = new Ball("red", "yellow");
+const brightBall = new Ball("red", "yellow", "blue");
 console.log(brightBall.color);
 
-const darkBall = new Ball("grey", "black");
+const darkBall = new Ball("white", "black", "violet");
 console.log(darkBall.color);
 
-const warmBall = new Ball("peru", "peachpuff");
+const warmBall = new Ball("peru", "peachpuff", "grey");
 console.log(warmBall.color);
 
 //console.log(yellowBall.bounce()); //the method that exists in relation to the function constructor
@@ -67,26 +68,31 @@ console.log(warmBall.color);
 function changeToNeutral() {
     ball.style.backgroundColor = `${neutralBall.color}`;
     body.style.backgroundColor = `${neutralBall.backgroundColor}`;
+    ball.style.borderColor = `${neutralBall.borderColor}`;
 }
 
 function changeToCool() {
     ball.style.backgroundColor = `${coolBall.color}`;
     body.style.backgroundColor = `${coolBall.backgroundColor}`;
+    ball.style.borderColor = `${coolBall.borderColor}`;
 }
 
 function changeToBright() {
     ball.style.backgroundColor = `${brightBall.color}`;
     body.style.backgroundColor = `${brightBall.backgroundColor}`;
+    ball.style.borderColor = `${brightBall.borderColor}`;
 }
 
 function changeToDark() {
     ball.style.backgroundColor = `${darkBall.color}`;
     body.style.backgroundColor = `${darkBall.backgroundColor}`;
+    ball.style.borderColor = `${darkBall.borderColor}`;
 }
 
 function changeToWarm() {
     ball.style.backgroundColor = `${warmBall.color}`;
     body.style.backgroundColor = `${warmBall.backgroundColor}`;
+    ball.style.borderColor = `${warmBall.borderColor}`;
 }
 
 //make the buttons work:
